@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Authentication</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <div class='login'>
+  <% if current_user %>
+    <%= current_user.email %>
+    <%= link_to "log out", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to "Register", new_user_registration_path %>
+  <% end %>
+
+<nav>
+  <ul>
+    <li> <%= link_to 'gossip', public_path %> </li>
+    <li> <%= link_to 'secret', secret_path %> </li>
+    <li> <%= link_to 'really_secret', really_secret_path %> </li>
+  </ul>
+
+</nav>
+
+<%= yield %>
+
+</body>
+</html>

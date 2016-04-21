@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_id: 
+  payment_type: MyString
+  card_number: MyString
+  value: 9.99
+
+two:
+  customer_id: 
+  payment_type: MyString
+  card_number: MyString
+  value: 9.99
